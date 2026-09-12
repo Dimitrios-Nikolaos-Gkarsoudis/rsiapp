@@ -76,6 +76,32 @@ class RoadRiskMapLayer {
     );
   }
 
+  /// Shows only [assessments] (e.g. roads matching the map filters) and sets
+  /// whether the road risk layer is visible. Does nothing until [addTo] has
+  /// run.
+  Future<void> update(
+    mapbox.MapboxMap map, {
+    required bool visible,
+    required Iterable<RiskAssessment> assessments,
+  }) async {
+    final style = map.style;
+
+    if (!await style.styleSourceExists(sourceId)) {
+      return;
+    }
+
+    final source = await style.getSource(sourceId);
+    if (source is mapbox.GeoJsonSource) {
+      await source.updateGeoJSON(jsonEncode(_toGeoJson(assessments.toList())));
+    }
+
+    await style.setStyleLayerProperty(
+      lineLayerId,
+      'visibility',
+      visible ? 'visible' : 'none',
+    );
+  }
+
   Future<void> _removeFrom(mapbox.MapboxMap map) async {
     map.removeInteraction(_tapId);
 

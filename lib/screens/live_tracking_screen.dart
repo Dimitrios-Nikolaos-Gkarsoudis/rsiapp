@@ -13,7 +13,9 @@ import '../map/road_risk_map_layer.dart';
 import '../models/hazard_model.dart';
 import '../providers/accidents_provider.dart';
 import '../providers/app_setup_provider.dart';
+import '../providers/clock_provider.dart';
 import '../providers/location_provider.dart';
+import '../providers/map_filter_provider.dart';
 import '../providers/navigation_provider.dart';
 import '../providers/road_risk_provider.dart';
 import '../services/hazard_db_service.dart';
@@ -22,6 +24,7 @@ import '../services/mapbox_service.dart';
 import '../services/osrm_service.dart';
 import '../widgets/accidents/accident_details_sheet.dart';
 import '../widgets/map_compass_button.dart';
+import '../widgets/map_filter/map_filter_sheet.dart';
 import '../widgets/rentals/rentals_sheet.dart';
 import '../widgets/road_risk/road_risk_details_sheet.dart';
 import '../widgets/route_summary_sheet.dart';
@@ -660,6 +663,38 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     } catch (error) {
       debugPrint('RSI could not show accident points: $error');
     }
+
+    await _applyMapFilter();
+  }
+
+  /// Shows only the accidents and roads that match the map filters.
+  Future<void> _applyMapFilter() async {
+    final map = _map;
+    if (map == null) return;
+
+    final filter = ref.read(mapFilterProvider);
+    final now = ref.read(clockProvider)();
+
+    try {
+      final catalog = await ref.read(accidentCatalogProvider.future);
+      final assessments = await ref.read(roadRiskProvider.future);
+      if (!mounted) return;
+
+      await _accidentLayer.update(
+        map,
+        visible: filter.showAccidents,
+        accidents: catalog.accidents.where(
+          (accident) => filter.includesAccident(accident, now),
+        ),
+      );
+      await _roadRiskLayer.update(
+        map,
+        visible: filter.showRoadRisk,
+        assessments: assessments.where(filter.includesRoad),
+      );
+    } catch (error) {
+      debugPrint('RSI could not apply map filters: $error');
+    }
   }
 
   /// Moves the map from its default view to the user once, on the first fix.
@@ -898,6 +933,9 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
   Widget _collapsedSearchBar() {
     final hasRoute = ref.watch(navigationProvider).activeRouteDetails != null;
     final title = _selectedDestination?.displayName;
+    final activeFilters = ref.watch(
+      mapFilterProvider.select((filter) => filter.activeCount),
+    );
 
     return Material(
       color: Colors.white,
@@ -941,21 +979,22 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
                   ),
                 ),
               ),
-              Container(
-                width: 38,
-                height: 38,
-                margin: const EdgeInsets.only(right: 9),
-                decoration: const BoxDecoration(
-                  color: Color(0xFFE8F0FE),
-                  shape: BoxShape.circle,
-                ),
-                alignment: Alignment.center,
-                child: const Icon(
-                  Icons.shield_rounded,
+              Material(
+                color: const Color(0xFFE8F0FE),
+                shape: const CircleBorder(),
+                child: IconButton(
+                  tooltip: 'Map filters',
+                  visualDensity: VisualDensity.compact,
+                  onPressed: () => showMapFilterSheet(context),
                   color: _mapsBlue,
-                  size: 20,
+                  icon: Badge(
+                    isLabelVisible: activeFilters > 0,
+                    label: Text('$activeFilters'),
+                    child: const Icon(Icons.tune_rounded, size: 20),
+                  ),
                 ),
               ),
+              const SizedBox(width: 9),
             ],
           ),
         ),
@@ -1201,6 +1240,8 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     final nav = ref.watch(navigationProvider);
     final safeTop = MediaQuery.paddingOf(context).top;
     final safeBottom = MediaQuery.paddingOf(context).bottom;
+
+    ref.listen(mapFilterProvider, (_, _) => _applyMapFilter());
 
     ref.listen<AsyncValue<ll.LatLng>>(
       locationStreamProvider,

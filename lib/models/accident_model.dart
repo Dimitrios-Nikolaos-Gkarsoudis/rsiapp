@@ -174,7 +174,12 @@ class AccidentCatalog {
 
   /// GeoJSON for the map source, built from validated records only, with the
   /// properties the map layers need: `id` for taps and `severity` for colour.
-  Map<String, Object?> toMapGeoJson() {
+  Map<String, Object?> toMapGeoJson() => mapGeoJsonFor(accidents);
+
+  /// Map source GeoJSON for any set of accidents, e.g. the filtered ones.
+  static Map<String, Object?> mapGeoJsonFor(
+    Iterable<AccidentRecord> accidents,
+  ) {
     return {
       'type': 'FeatureCollection',
       'features': [

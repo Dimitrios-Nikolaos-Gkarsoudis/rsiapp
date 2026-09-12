@@ -129,6 +129,36 @@ class AccidentMapLayer {
     );
   }
 
+  /// Shows only [accidents] (e.g. the ones matching the map filters) and
+  /// sets whether the accident layers are visible. Clusters are recalculated
+  /// from the accidents shown. Does nothing until [addTo] has run.
+  Future<void> update(
+    mapbox.MapboxMap map, {
+    required bool visible,
+    required Iterable<AccidentRecord> accidents,
+  }) async {
+    final style = map.style;
+
+    if (!await style.styleSourceExists(sourceId)) {
+      return;
+    }
+
+    final source = await style.getSource(sourceId);
+    if (source is mapbox.GeoJsonSource) {
+      await source.updateGeoJSON(
+        jsonEncode(AccidentCatalog.mapGeoJsonFor(accidents)),
+      );
+    }
+
+    for (final layerId in [clusterLayerId, clusterCountLayerId, pointLayerId]) {
+      await style.setStyleLayerProperty(
+        layerId,
+        'visibility',
+        visible ? 'visible' : 'none',
+      );
+    }
+  }
+
   Future<void> _removeFrom(mapbox.MapboxMap map) async {
     map
       ..removeInteraction(_pointTapId)
