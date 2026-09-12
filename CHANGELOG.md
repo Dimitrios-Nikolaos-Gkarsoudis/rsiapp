@@ -76,3 +76,5 @@ Branch: `feature/safety-map-rentals-onboarding`
   startForeground").
 - Location updates could stay off after the first launch when they started
   before permission was granted.
+- Road risk lines were hard to tap. Taps within about 20 dp of a line now
+  select it. Accident points drawn on top still take priority.

@@ -23,12 +23,15 @@ class RoadRiskMapLayer {
 
   /// Adds the road risk source, line layer and tap handling to [map].
   ///
-  /// Call once the style has loaded, before layers that should draw on top
-  /// of the roads. Calling again replaces the previous setup.
+  /// [tapRadius] widens the tappable area around each line, in the map's
+  /// screen units (physical pixels on Android). Call once the style has
+  /// loaded, before layers that should draw on top of the roads. Calling
+  /// again replaces the previous setup.
   Future<void> addTo(
     mapbox.MapboxMap map,
-    List<RiskAssessment> assessments,
-  ) async {
+    List<RiskAssessment> assessments, {
+    double? tapRadius,
+  }) async {
     _assessmentsById = {
       for (final assessment in assessments) assessment.segment.id: assessment,
     };
@@ -71,6 +74,7 @@ class RoadRiskMapLayer {
       mapbox.TapInteraction(
         mapbox.FeaturesetDescriptor(layerId: lineLayerId),
         (feature, _) => _handleTap(feature),
+        radius: tapRadius,
       ),
       interactionID: _tapId,
     );

@@ -642,6 +642,18 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     await ref.read(appSetupProvider.notifier).setUseDeviceLocation(true);
   }
 
+  /// Road lines are thin, so taps this close to a line still select it.
+  static const double _roadTapRadiusDp = 20;
+
+  /// Converts a tap radius in logical pixels to the map's screen units.
+  /// Mapbox on Android measures in physical pixels; iOS uses points.
+  double _mapTapRadius(double logicalPixels) {
+    final isAndroid = Theme.of(context).platform == TargetPlatform.android;
+    return isAndroid
+        ? logicalPixels * MediaQuery.devicePixelRatioOf(context)
+        : logicalPixels;
+  }
+
   /// Shows road risk levels and recorded accidents once the map style has
   /// loaded. Road lines go first so accident points draw on top of them.
   Future<void> _addSafetyLayers() async {
@@ -651,7 +663,11 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     try {
       final assessments = await ref.read(roadRiskProvider.future);
       if (!mounted) return;
-      await _roadRiskLayer.addTo(map, assessments);
+      await _roadRiskLayer.addTo(
+        map,
+        assessments,
+        tapRadius: _mapTapRadius(_roadTapRadiusDp),
+      );
     } catch (error) {
       debugPrint('RSI could not show road risk levels: $error');
     }
