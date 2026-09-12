@@ -1,0 +1,1772 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "ath-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.735521,
+          37.974825
+        ]
+      },
+      "properties": {
+        "id": "ath-001",
+        "date": "2023-02-13T11:39:00",
+        "location": "Amalias Ave (Syntagma)",
+        "area": "Syntagma, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.735904,
+          37.976436
+        ]
+      },
+      "properties": {
+        "id": "ath-002",
+        "date": "2024-12-10T10:38:00",
+        "location": "Amalias Ave (Syntagma)",
+        "area": "Syntagma, Athens",
+        "severity": "serious",
+        "injuries": 3,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.735646,
+          37.975125
+        ]
+      },
+      "properties": {
+        "id": "ath-003",
+        "date": "2026-08-20T19:10:00",
+        "location": "Amalias Ave (Syntagma)",
+        "area": "Syntagma, Athens",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "head_on",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.735531,
+          37.974654
+        ]
+      },
+      "properties": {
+        "id": "ath-004",
+        "date": "2025-12-06T07:36:00",
+        "location": "Amalias Ave (Syntagma)",
+        "area": "Syntagma, Athens",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.735675,
+          37.975599
+        ]
+      },
+      "properties": {
+        "id": "ath-005",
+        "date": "2023-02-25T15:42:00",
+        "location": "Amalias Ave (Syntagma)",
+        "area": "Syntagma, Athens",
+        "severity": "fatal",
+        "injuries": 2,
+        "fatalities": 2,
+        "accidentType": "side_impact",
+        "cause": "Speeding",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727638,
+          37.984201
+        ]
+      },
+      "properties": {
+        "id": "ath-006",
+        "date": "2024-08-31T22:20:00",
+        "location": "Omonia Square",
+        "area": "Omonia, Athens",
+        "severity": "fatal",
+        "injuries": 0,
+        "fatalities": 1,
+        "accidentType": "single_vehicle",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727652,
+          37.984329
+        ]
+      },
+      "properties": {
+        "id": "ath-007",
+        "date": "2023-05-31T16:54:00",
+        "location": "Omonia Square",
+        "area": "Omonia, Athens",
+        "severity": "fatal",
+        "injuries": 0,
+        "fatalities": 1,
+        "accidentType": "head_on",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727886,
+          37.984345
+        ]
+      },
+      "properties": {
+        "id": "ath-008",
+        "date": "2023-02-25T20:46:00",
+        "location": "Omonia Square",
+        "area": "Omonia, Athens",
+        "severity": "serious",
+        "injuries": 3,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.728158,
+          37.984404
+        ]
+      },
+      "properties": {
+        "id": "ath-009",
+        "date": "2025-04-14T05:19:00",
+        "location": "Omonia Square",
+        "area": "Omonia, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727939,
+          37.984377
+        ]
+      },
+      "properties": {
+        "id": "ath-010",
+        "date": "2023-05-14T14:25:00",
+        "location": "Omonia Square",
+        "area": "Omonia, Athens",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.732342,
+          37.97915
+        ]
+      },
+      "properties": {
+        "id": "ath-011",
+        "date": "2023-04-28T10:45:00",
+        "location": "Panepistimiou St",
+        "area": "Athens Centre",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Speeding",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.733032,
+          37.978401
+        ]
+      },
+      "properties": {
+        "id": "ath-012",
+        "date": "2024-02-17T08:48:00",
+        "location": "Panepistimiou St",
+        "area": "Athens Centre",
+        "severity": "serious",
+        "injuries": 3,
+        "fatalities": 0,
+        "accidentType": "pedestrian",
+        "cause": "Alcohol",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.731185,
+          37.980507
+        ]
+      },
+      "properties": {
+        "id": "ath-013",
+        "date": "2023-09-11T09:48:00",
+        "location": "Panepistimiou St",
+        "area": "Athens Centre",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.733152,
+          37.978257
+        ]
+      },
+      "properties": {
+        "id": "ath-014",
+        "date": "2026-02-17T14:41:00",
+        "location": "Panepistimiou St",
+        "area": "Athens Centre",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.733347,
+          37.977872
+        ]
+      },
+      "properties": {
+        "id": "ath-015",
+        "date": "2026-04-06T14:34:00",
+        "location": "Stadiou St",
+        "area": "Athens Centre",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Alcohol",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.733142,
+          37.978174
+        ]
+      },
+      "properties": {
+        "id": "ath-016",
+        "date": "2023-11-11T13:50:00",
+        "location": "Stadiou St",
+        "area": "Athens Centre",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7338,
+          37.977468
+        ]
+      },
+      "properties": {
+        "id": "ath-017",
+        "date": "2024-01-28T06:28:00",
+        "location": "Stadiou St",
+        "area": "Athens Centre",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Speeding",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.746032,
+          37.976115
+        ]
+      },
+      "properties": {
+        "id": "ath-018",
+        "date": "2024-02-07T03:27:00",
+        "location": "Vasilissis Sofias Ave (Evangelismos)",
+        "area": "Kolonaki, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.747033,
+          37.976307
+        ]
+      },
+      "properties": {
+        "id": "ath-019",
+        "date": "2025-12-16T22:48:00",
+        "location": "Vasilissis Sofias Ave (Evangelismos)",
+        "area": "Kolonaki, Athens",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.748543,
+          37.976619
+        ]
+      },
+      "properties": {
+        "id": "ath-020",
+        "date": "2023-03-05T05:55:00",
+        "location": "Vasilissis Sofias Ave (Evangelismos)",
+        "area": "Kolonaki, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.74868,
+          37.976679
+        ]
+      },
+      "properties": {
+        "id": "ath-021",
+        "date": "2026-04-22T19:14:00",
+        "location": "Vasilissis Sofias Ave (Evangelismos)",
+        "area": "Kolonaki, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "pedestrian",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.732047,
+          37.991671
+        ]
+      },
+      "properties": {
+        "id": "ath-022",
+        "date": "2024-06-06T12:42:00",
+        "location": "Alexandras Ave",
+        "area": "Pedion tou Areos, Athens",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Speeding",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.732764,
+          37.991531
+        ]
+      },
+      "properties": {
+        "id": "ath-023",
+        "date": "2025-10-07T12:12:00",
+        "location": "Alexandras Ave",
+        "area": "Pedion tou Areos, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.732815,
+          37.991574
+        ]
+      },
+      "properties": {
+        "id": "ath-024",
+        "date": "2023-10-28T06:38:00",
+        "location": "Alexandras Ave",
+        "area": "Pedion tou Areos, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "head_on",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.733141,
+          37.991506
+        ]
+      },
+      "properties": {
+        "id": "ath-025",
+        "date": "2026-07-30T04:18:00",
+        "location": "Alexandras Ave",
+        "area": "Pedion tou Areos, Athens",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "pedestrian",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.72567,
+          37.963764
+        ]
+      },
+      "properties": {
+        "id": "ath-026",
+        "date": "2023-01-14T12:23:00",
+        "location": "Syngrou Ave (Fix)",
+        "area": "Koukaki, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Alcohol",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.726732,
+          37.964665
+        ]
+      },
+      "properties": {
+        "id": "ath-027",
+        "date": "2024-07-07T18:42:00",
+        "location": "Syngrou Ave (Fix)",
+        "area": "Koukaki, Athens",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "other",
+        "cause": "Alcohol",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727717,
+          37.965324
+        ]
+      },
+      "properties": {
+        "id": "ath-028",
+        "date": "2025-02-13T04:40:00",
+        "location": "Syngrou Ave (Fix)",
+        "area": "Koukaki, Athens",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727738,
+          37.965447
+        ]
+      },
+      "properties": {
+        "id": "ath-029",
+        "date": "2023-10-01T18:03:00",
+        "location": "Syngrou Ave (Fix)",
+        "area": "Koukaki, Athens",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.726948,
+          37.964816
+        ]
+      },
+      "properties": {
+        "id": "ath-030",
+        "date": "2023-10-21T22:04:00",
+        "location": "Syngrou Ave (Fix)",
+        "area": "Koukaki, Athens",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.714577,
+          37.977574
+        ]
+      },
+      "properties": {
+        "id": "ath-031",
+        "date": "2025-12-16T08:35:00",
+        "location": "Pireos St (Keramikos)",
+        "area": "Keramikos, Athens",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "single_vehicle",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.715598,
+          37.978186
+        ]
+      },
+      "properties": {
+        "id": "ath-032",
+        "date": "2023-11-14T16:33:00",
+        "location": "Pireos St (Keramikos)",
+        "area": "Keramikos, Athens",
+        "severity": "serious",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "single_vehicle",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.716877,
+          37.979092
+        ]
+      },
+      "properties": {
+        "id": "ath-033",
+        "date": "2024-09-12T01:10:00",
+        "location": "Pireos St (Keramikos)",
+        "area": "Keramikos, Athens",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "head_on",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.726509,
+          37.978313
+        ]
+      },
+      "properties": {
+        "id": "ath-034",
+        "date": "2023-08-23T23:41:00",
+        "location": "Athinas St (Monastiraki)",
+        "area": "Monastiraki, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.726658,
+          37.978575
+        ]
+      },
+      "properties": {
+        "id": "ath-035",
+        "date": "2025-06-09T02:30:00",
+        "location": "Athinas St (Monastiraki)",
+        "area": "Monastiraki, Athens",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.726801,
+          37.979412
+        ]
+      },
+      "properties": {
+        "id": "ath-036",
+        "date": "2023-06-08T18:59:00",
+        "location": "Athinas St (Monastiraki)",
+        "area": "Monastiraki, Athens",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.761887,
+          37.985506
+        ]
+      },
+      "properties": {
+        "id": "ath-037",
+        "date": "2024-06-06T11:35:00",
+        "location": "Mesogeion Ave (Ampelokipoi)",
+        "area": "Ampelokipoi, Athens",
+        "severity": "minor",
+        "cause": "Unsafe lane change",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.762255,
+          37.985547
+        ]
+      },
+      "properties": {
+        "id": "ath-038",
+        "date": "2025-02-21T00:19:00",
+        "location": "Mesogeion Ave (Ampelokipoi)",
+        "area": "Ampelokipoi, Athens",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "single_vehicle",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.761249,
+          37.985169
+        ]
+      },
+      "properties": {
+        "id": "ath-039",
+        "date": "2023-06-10T02:54:00",
+        "location": "Mesogeion Ave (Ampelokipoi)",
+        "area": "Ampelokipoi, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "head_on",
+        "cause": "Speeding",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.761867,
+          37.985404
+        ]
+      },
+      "properties": {
+        "id": "ath-040",
+        "date": "2023-06-21T11:23:00",
+        "location": "Mesogeion Ave (Ampelokipoi)",
+        "area": "Ampelokipoi, Athens",
+        "severity": "fatal",
+        "injuries": 1,
+        "fatalities": 1,
+        "accidentType": "side_impact",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727043,
+          37.993475
+        ]
+      },
+      "properties": {
+        "id": "ath-041",
+        "date": "2023-11-11T04:57:00",
+        "location": "Acharnon St (Victoria)",
+        "area": "Victoria, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.726999,
+          37.992488
+        ]
+      },
+      "properties": {
+        "id": "ath-042",
+        "date": "2025-03-31T23:19:00",
+        "location": "Acharnon St (Victoria)",
+        "area": "Victoria, Athens",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "pedestrian",
+        "cause": "Pedestrian crossing outside a crosswalk",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.727038,
+          37.992285
+        ]
+      },
+      "properties": {
+        "id": "ath-043",
+        "date": "2024-02-16T21:44:00",
+        "location": "Acharnon St (Victoria)",
+        "area": "Victoria, Athens",
+        "severity": "serious",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "pedestrian",
+        "cause": "Alcohol",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.736552,
+          37.954244
+        ]
+      },
+      "properties": {
+        "id": "ath-044",
+        "date": "2024-05-05T12:17:00",
+        "location": "Vouliagmenis Ave",
+        "area": "Neos Kosmos, Athens",
+        "severity": "minor",
+        "accidentType": "side_impact",
+        "cause": "Alcohol",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.736191,
+          37.9552
+        ]
+      },
+      "properties": {
+        "id": "ath-045",
+        "date": "2024-05-27T03:47:00",
+        "location": "Vouliagmenis Ave",
+        "area": "Neos Kosmos, Athens",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "single_vehicle",
+        "cause": "Unsafe lane change",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ath-046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.736276,
+          37.955029
+        ]
+      },
+      "properties": {
+        "id": "ath-046",
+        "date": "2023-08-04T11:21:00",
+        "location": "Vouliagmenis Ave",
+        "area": "Neos Kosmos, Athens",
+        "severity": "damage_only",
+        "accidentType": "other",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.851786,
+          39.667116
+        ]
+      },
+      "properties": {
+        "id": "ioa-001",
+        "date": "2024-10-09T04:26:00",
+        "location": "Pyrrou Square",
+        "area": "Ioannina Centre",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Unsafe lane change",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.851971,
+          39.666988
+        ]
+      },
+      "properties": {
+        "id": "ioa-002",
+        "date": "2023-07-19T19:20:00",
+        "location": "Pyrrou Square",
+        "area": "Ioannina Centre",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "head_on",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.852153,
+          39.666596
+        ]
+      },
+      "properties": {
+        "id": "ioa-003",
+        "date": "2024-04-27T22:58:00",
+        "location": "Pyrrou Square",
+        "area": "Ioannina Centre",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.852597,
+          39.666023
+        ]
+      },
+      "properties": {
+        "id": "ioa-004",
+        "date": "2026-01-06T11:41:00",
+        "location": "Pyrrou Square",
+        "area": "Ioannina Centre",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.850533,
+          39.657465
+        ]
+      },
+      "properties": {
+        "id": "ioa-005",
+        "date": "2025-06-17T11:50:00",
+        "location": "Dodonis Ave (Kiafa)",
+        "area": "Kiafa, Ioannina",
+        "severity": "minor",
+        "accidentType": "side_impact",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.850363,
+          39.657264
+        ]
+      },
+      "properties": {
+        "id": "ioa-006",
+        "date": "2026-04-14T01:53:00",
+        "location": "Dodonis Ave (Kiafa)",
+        "area": "Kiafa, Ioannina",
+        "severity": "damage_only",
+        "accidentType": "rear_end",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.849765,
+          39.655836
+        ]
+      },
+      "properties": {
+        "id": "ioa-007",
+        "date": "2025-06-23T14:38:00",
+        "location": "Dodonis Ave (Kiafa)",
+        "area": "Kiafa, Ioannina",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "other",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.849583,
+          39.655395
+        ]
+      },
+      "properties": {
+        "id": "ioa-008",
+        "date": "2025-03-16T10:54:00",
+        "location": "Dodonis Ave (Kiafa)",
+        "area": "Kiafa, Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Speeding",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.849761,
+          39.655808
+        ]
+      },
+      "properties": {
+        "id": "ioa-009",
+        "date": "2026-02-01T13:10:00",
+        "location": "Dodonis Ave (Kiafa)",
+        "area": "Kiafa, Ioannina",
+        "severity": "serious",
+        "accidentType": "rear_end",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.85244,
+          39.666227
+        ]
+      },
+      "properties": {
+        "id": "ioa-010",
+        "date": "2025-02-15T15:18:00",
+        "location": "28is Oktovriou St",
+        "area": "Ioannina Centre",
+        "severity": "minor",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.852967,
+          39.665488
+        ]
+      },
+      "properties": {
+        "id": "ioa-011",
+        "date": "2024-05-05T10:30:00",
+        "location": "28is Oktovriou St",
+        "area": "Ioannina Centre",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.852226,
+          39.666433
+        ]
+      },
+      "properties": {
+        "id": "ioa-012",
+        "date": "2024-01-23T21:32:00",
+        "location": "28is Oktovriou St",
+        "area": "Ioannina Centre",
+        "severity": "fatal",
+        "injuries": 2,
+        "fatalities": 1,
+        "accidentType": "motorcycle",
+        "cause": "Speeding",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.854006,
+          39.669438
+        ]
+      },
+      "properties": {
+        "id": "ioa-013",
+        "date": "2023-11-09T12:07:00",
+        "location": "Napoleontos Zerva St",
+        "area": "Ioannina Centre",
+        "severity": "serious",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "head_on",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.854299,
+          39.669084
+        ]
+      },
+      "properties": {
+        "id": "ioa-014",
+        "date": "2025-07-04T18:03:00",
+        "location": "Napoleontos Zerva St",
+        "area": "Ioannina Centre",
+        "severity": "minor",
+        "accidentType": "pedestrian",
+        "cause": "Pedestrian crossing outside a crosswalk",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.854307,
+          39.669028
+        ]
+      },
+      "properties": {
+        "id": "ioa-015",
+        "date": "2026-03-12T04:38:00",
+        "location": "Napoleontos Zerva St",
+        "area": "Ioannina Centre",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.859915,
+          39.671164
+        ]
+      },
+      "properties": {
+        "id": "ioa-016",
+        "date": "2023-08-29T03:03:00",
+        "location": "Andronikou Palaiologou St",
+        "area": "Castle area, Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.860933,
+          39.671624
+        ]
+      },
+      "properties": {
+        "id": "ioa-017",
+        "date": "2026-06-23T21:38:00",
+        "location": "Andronikou Palaiologou St",
+        "area": "Castle area, Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.859109,
+          39.670678
+        ]
+      },
+      "properties": {
+        "id": "ioa-018",
+        "date": "2026-05-03T20:16:00",
+        "location": "Andronikou Palaiologou St",
+        "area": "Castle area, Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "pedestrian",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.859161,
+          39.670752
+        ]
+      },
+      "properties": {
+        "id": "ioa-019",
+        "date": "2025-01-24T10:51:00",
+        "location": "Andronikou Palaiologou St",
+        "area": "Castle area, Ioannina",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.856344,
+          39.672581
+        ]
+      },
+      "properties": {
+        "id": "ioa-020",
+        "date": "2023-07-06T23:54:00",
+        "location": "Mavili Square",
+        "area": "Castle area, Ioannina",
+        "severity": "minor",
+        "accidentType": "head_on",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.85709,
+          39.672227
+        ]
+      },
+      "properties": {
+        "id": "ioa-021",
+        "date": "2026-07-20T01:15:00",
+        "location": "Mavili Square",
+        "area": "Castle area, Ioannina",
+        "severity": "damage_only",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.85703,
+          39.672262
+        ]
+      },
+      "properties": {
+        "id": "ioa-022",
+        "date": "2025-06-22T04:40:00",
+        "location": "Mavili Square",
+        "area": "Castle area, Ioannina",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Failure to yield",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.837925,
+          39.622494
+        ]
+      },
+      "properties": {
+        "id": "ioa-023",
+        "date": "2025-02-24T17:12:00",
+        "location": "Panepistimiou St (University)",
+        "area": "University, Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "side_impact",
+        "cause": "Alcohol",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.837715,
+          39.620846
+        ]
+      },
+      "properties": {
+        "id": "ioa-024",
+        "date": "2024-01-23T00:22:00",
+        "location": "Panepistimiou St (University)",
+        "area": "University, Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.838079,
+          39.623313
+        ]
+      },
+      "properties": {
+        "id": "ioa-025",
+        "date": "2023-11-12T00:51:00",
+        "location": "Panepistimiou St (University)",
+        "area": "University, Ioannina",
+        "severity": "fatal",
+        "injuries": 2,
+        "fatalities": 1,
+        "accidentType": "pedestrian",
+        "cause": "Wet road surface",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.837834,
+          39.620299
+        ]
+      },
+      "properties": {
+        "id": "ioa-026",
+        "date": "2023-03-27T12:20:00",
+        "location": "Panepistimiou St (University)",
+        "area": "University, Ioannina",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "pedestrian",
+        "cause": "Pedestrian crossing outside a crosswalk",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.86267,
+          39.659433
+        ]
+      },
+      "properties": {
+        "id": "ioa-027",
+        "date": "2023-01-11T09:15:00",
+        "location": "Akti Miaouli St",
+        "area": "Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "other",
+        "cause": "Unsafe lane change",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.86209,
+          39.660364
+        ]
+      },
+      "properties": {
+        "id": "ioa-028",
+        "date": "2026-07-26T20:11:00",
+        "location": "Akti Miaouli St",
+        "area": "Ioannina",
+        "severity": "minor",
+        "injuries": 1,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.862941,
+          39.659053
+        ]
+      },
+      "properties": {
+        "id": "ioa-029",
+        "date": "2026-07-09T00:05:00",
+        "location": "Akti Miaouli St",
+        "area": "Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "single_vehicle",
+        "cause": "Driver distraction",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.843544,
+          39.69034
+        ]
+      },
+      "properties": {
+        "id": "ioa-030",
+        "date": "2023-07-13T00:20:00",
+        "location": "Panagias-Ioanninon Rd",
+        "area": "Perivleptos, Ioannina",
+        "severity": "damage_only",
+        "injuries": 0,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Poor visibility",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.842056,
+          39.689946
+        ]
+      },
+      "properties": {
+        "id": "ioa-031",
+        "date": "2023-01-31T23:48:00",
+        "location": "Panagias-Ioanninon Rd",
+        "area": "Perivleptos, Ioannina",
+        "severity": "serious",
+        "injuries": 3,
+        "fatalities": 0,
+        "accidentType": "motorcycle",
+        "cause": "Unsafe lane change",
+        "source": "Mock data (development only)"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ioa-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.841921,
+          39.689848
+        ]
+      },
+      "properties": {
+        "id": "ioa-032",
+        "date": "2023-01-03T09:31:00",
+        "location": "Panagias-Ioanninon Rd",
+        "area": "Perivleptos, Ioannina",
+        "severity": "serious",
+        "injuries": 2,
+        "fatalities": 0,
+        "accidentType": "rear_end",
+        "cause": "Running a red light",
+        "source": "Mock data (development only)"
+      }
+    }
+  ]
+}
