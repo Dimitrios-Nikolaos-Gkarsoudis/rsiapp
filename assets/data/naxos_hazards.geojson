@@ -1,0 +1,252 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.372, 37.103]
+      },
+      "properties": {
+        "id": "acc_1",
+        "hazardType": "Τροχαίο ατύχημα με τραυματισμό στη Νάξο",
+        "locationDescription": "Παραλιακή οδός Χώρας Νάξου",
+        "nearestArea": "Χώρα Νάξου (παραλιακός δρόμος)",
+        "severity": "τραυματισμός",
+        "date": "2019-08-02",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 1,
+        "recentAccidents": 0,
+        "radiusMeters": 150.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.51, 37.045]
+      },
+      "properties": {
+        "id": "acc_2",
+        "hazardType": "«Βουτιά» 60χρονου στον δρόμο της Μουτσούνας",
+        "locationDescription": "Δρόμος Μουτσούνας, όχημα έπεσε σε χαράδρα 30 μέτρων",
+        "nearestArea": "Μουτσούνα",
+        "severity": "χωρίς τραυματισμό",
+        "date": "2020-05-27",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 1,
+        "recentAccidents": 0,
+        "radiusMeters": 150.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.395, 37.07]
+      },
+      "properties": {
+        "id": "acc_3",
+        "hazardType": "ΝΑΞΟΣ: Τροχαίο στον κεντρικό δρόμο προς Γαλανάδο",
+        "locationDescription": "Κεντρικός δρόμος προς το χωριό Γαλανάδο",
+        "nearestArea": "Γαλανάδο",
+        "severity": "άγνωστη σοβαρότητα",
+        "date": "2020-06-17",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 1,
+        "recentAccidents": 0,
+        "radiusMeters": 150.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.3683, 37.0778]
+      },
+      "properties": {
+        "id": "acc_4",
+        "hazardType": "Σημείο Υψηλού Κινδύνου: Δρόμος Αεροδρομίου",
+        "locationDescription": "Δρόμος αεροδρομίου Νάξου",
+        "nearestArea": "Αεροδρόμιο Νάξου",
+        "severity": "Πολλαπλά τροχαία (3 ατυχήματα)",
+        "date": "2022-09-07",
+        "weatherFactor": "Αυξημένη κίνηση / Ολισθηρότητα",
+        "totalAccidents": 3,
+        "recentAccidents": 1,
+        "radiusMeters": 180.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.4, 37.07]
+      },
+      "properties": {
+        "id": "acc_5",
+        "hazardType": "Θανατηφόρο τροχαίο / Στροφή Λουκάκι",
+        "locationDescription": "Περιοχή Λουκάκι - Στροφή επικίνδυνης ορατότητας",
+        "nearestArea": "Λουκάκι",
+        "severity": "θανατηφόρο",
+        "date": "2022-02-07",
+        "weatherFactor": "Επικίνδυνη στροφή",
+        "totalAccidents": 2,
+        "recentAccidents": 0,
+        "radiusMeters": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.39, 37.09]
+      },
+      "properties": {
+        "id": "acc_6",
+        "hazardType": "Νάξος: Τροχαίο ατύχημα με τραυματισμό ενός άνδρα",
+        "locationDescription": "Κεντρικός δρόμος προς Γλινάδο, έξω από τη Χώρα",
+        "nearestArea": "Γλινάδο / Χώρα Νάξου",
+        "severity": "τραυματισμός",
+        "date": "2021-04-22",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 1,
+        "recentAccidents": 0,
+        "radiusMeters": 150.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.41, 37.075]
+      },
+      "properties": {
+        "id": "acc_7",
+        "hazardType": "Σοβαρό τροχαίο - Επαρχιακή οδός Χώρας – Χαλκείου",
+        "locationDescription": "Επαρχιακός δρόμος Χώρας – Χαλκείου (κοντά σε πρατήριο/γκρεμό)",
+        "nearestArea": "Χώρα - Χαλκί",
+        "severity": "θανατηφόρο",
+        "date": "2021-11-12",
+        "weatherFactor": "Επικίνδυνος γκρεμός",
+        "totalAccidents": 2,
+        "recentAccidents": 0,
+        "radiusMeters": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.43, 37.05]
+      },
+      "properties": {
+        "id": "acc_8",
+        "hazardType": "Θανατηφόρο τροχαίο / Τρίποδες",
+        "locationDescription": "Περιοχή Τρίποδες Νάξου",
+        "nearestArea": "Τρίποδες",
+        "severity": "θανατηφόρο",
+        "date": "2022-06-25",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 1,
+        "recentAccidents": 0,
+        "radiusMeters": 150.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.382, 37.095]
+      },
+      "properties": {
+        "id": "acc_9",
+        "hazardType": "Τροχαίο με σοβαρό τραυματισμό / Περίχωρα Χώρας",
+        "locationDescription": "Περίχωρα Χώρας Νάξου - Εκτροπή οχήματος",
+        "nearestArea": "Χώρα Νάξου (περίχωρα)",
+        "severity": "σοβαρός τραυματισμός",
+        "date": "2022-07-06",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 2,
+        "recentAccidents": 0,
+        "radiusMeters": 150.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.376, 37.105]
+      },
+      "properties": {
+        "id": "acc_10",
+        "hazardType": "Τροχαίο με τραυματισμό δύο νεαρών σε μοτοσικλέτα",
+        "locationDescription": "Χώρα Νάξου (οδός Παπαβασιλείου)",
+        "nearestArea": "Χώρα Νάξου",
+        "severity": "τραυματισμός",
+        "date": "2023-09-05",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 1,
+        "recentAccidents": 1,
+        "radiusMeters": 120.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.4, 37.085]
+      },
+      "properties": {
+        "id": "acc_11",
+        "hazardType": "Σοβαρό τροχαίο / Σφοδρή μετωπική σύγκρουση προς Γλινάδο",
+        "locationDescription": "Δρόμος προς Γλινάδο",
+        "nearestArea": "Γλινάδο",
+        "severity": "τραυματισμοί",
+        "date": "2024-05-30",
+        "weatherFactor": "Μετωπική σύγκρουση",
+        "totalAccidents": 1,
+        "recentAccidents": 1,
+        "radiusMeters": 150.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.5, 37.15]
+      },
+      "properties": {
+        "id": "acc_12",
+        "hazardType": "Ντελαπάρισμα φορτηγού ΔΕΔΔΗΕ / Δρόμος Κωμιακής – Ανέφαμα",
+        "locationDescription": "Δρόμος Κωμιακής – Ανέφαμα",
+        "nearestArea": "Κωμιακή / Ανέφαμα",
+        "severity": "τραυματισμός",
+        "date": "2025-09-28",
+        "weatherFactor": "Ολισθηρότητα / Στενός δρόμος",
+        "totalAccidents": 1,
+        "recentAccidents": 1,
+        "radiusMeters": 160.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.36, 37.085]
+      },
+      "properties": {
+        "id": "acc_13",
+        "hazardType": "Τροχαίο στη Στελίδα – Πτώση σε κολώνα ΔΕΗ",
+        "locationDescription": "Στελίδα Νάξου",
+        "nearestArea": "Στελίδα",
+        "severity": "τραυματισμός",
+        "date": "2026-04-06",
+        "weatherFactor": "Άγνωστο",
+        "totalAccidents": 1,
+        "recentAccidents": 1,
+        "radiusMeters": 140.0
+      }
+    }
+  ]
+}
