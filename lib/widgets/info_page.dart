@@ -76,38 +76,3 @@ class InfoSection extends StatelessWidget {
     );
   }
 }
-
-/// Marks a page whose text is a placeholder that still needs legal review.
-class DraftNotice extends StatelessWidget {
-  const DraftNotice({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 12),
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: const Color(0xFFFEF7E0),
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: const Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(Icons.edit_note_rounded, color: Color(0xFFB06000)),
-          SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              'Draft. This page is a placeholder and must be reviewed by a '
-              'legal professional before release.',
-              style: TextStyle(
-                color: Color(0xFF5F3B00),
-                fontSize: 14,
-                height: 1.4,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}

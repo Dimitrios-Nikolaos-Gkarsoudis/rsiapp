@@ -46,8 +46,18 @@ Branch: `feature/safety-map-rentals-onboarding`
   - Location permission is only requested when the user opts in.
   - The choice is saved on the device. If the user skips, the location
     button asks later.
-- **Side drawer** with About, Terms & Conditions and Privacy Policy pages. The
-  legal pages are drafts that need legal review.
+- **Side drawer** with About, Terms & Conditions and Privacy Policy pages.
+- **Terms & Conditions and Privacy Policy.** Full documents in
+  `assets/legal/`, shown in the app.
+  - Terms: 18 sections, covering safety while driving, accident data and risk
+    estimates, third-party maps and routes, rentals and partner offers, and
+    liability.
+  - Privacy Policy: 13 sections, covering GDPR legal bases, service providers
+    (Mapbox, routing, Google location services), your rights and the Hellenic
+    Data Protection Authority.
+  - Bracketed placeholders (company details, contact email, dates, routing
+    provider) must be completed, and both texts reviewed by a lawyer, before
+    release.
 - **Map compass.** The needle follows the map's rotation, and tapping it
   resets the map to north. During navigation it switches between north-up
   and heading-up.

@@ -30,4 +30,5 @@ flutter:
     - assets/data/rentals.json
     - assets/data/accidents.geojson
     - assets/data/road_segments.geojson
+    - assets/legal/
     - assets/images/rentals/
