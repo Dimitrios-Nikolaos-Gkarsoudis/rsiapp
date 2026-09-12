@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Road Safety Insights: shield with a road. 108dp adaptive-icon grid. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M54 30 L74 37 V53 C74 66 65 74.5 54 78 C43 74.5 34 66 34 53 V37 Z M46 70 L51 42 H57 L62 70 Z M53.2 45 H54.8 V49 H53.2 Z M52.9 53 H55.1 V58 H52.9 Z M52.6 62 H55.4 V68 H52.6 Z" />
+</vector>
