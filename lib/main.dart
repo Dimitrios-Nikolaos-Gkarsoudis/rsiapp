@@ -3,7 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 
 import 'config/app_config.dart';
-import 'screens/live_tracking_screen.dart';
+import 'config/app_routes.dart';
+import 'providers/app_setup_provider.dart';
+import 'screens/home_shell.dart';
+import 'services/app_preferences.dart';
 import 'services/background_navigation_service.dart';
 
 Future<void> main() async {
@@ -15,11 +18,16 @@ Future<void> main() async {
     AppConfig.mapboxAccessToken,
   );
 
+  final preferences = await AppPreferences.load();
+
   await initializeBackgroundService();
 
   runApp(
-    const ProviderScope(
-      child: RoadSafetyInsightsApp(),
+    ProviderScope(
+      overrides: [
+        appPreferencesProvider.overrideWithValue(preferences),
+      ],
+      child: const RoadSafetyInsightsApp(),
     ),
   );
 }
@@ -32,7 +40,7 @@ class RoadSafetyInsightsApp extends StatelessWidget {
     const blue = Color(0xFF1A73E8);
 
     return MaterialApp(
-      title: 'RSI Road Safety Insights',
+      title: 'Road Safety Insights',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
@@ -56,7 +64,8 @@ class RoadSafetyInsightsApp extends StatelessWidget {
         ),
       ),
       home:
-          const LiveTrackingScreen(),
+          const HomeShell(),
+      routes: AppRoutes.routes,
     );
   }
 }

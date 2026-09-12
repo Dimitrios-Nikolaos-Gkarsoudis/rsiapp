@@ -16,6 +16,7 @@ dependencies:
   flutter_background_service: ^5.0.0
   just_audio: ^0.9.36
   flutter_riverpod: ^2.5.1
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/data/naxos_hazards.geojson
+    - assets/data/rentals.json
+    - assets/data/accidents.geojson
+    - assets/data/road_segments.geojson
+    - assets/images/rentals/

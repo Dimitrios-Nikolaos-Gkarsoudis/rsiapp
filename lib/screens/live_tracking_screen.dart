@@ -8,13 +8,22 @@ import 'package:latlong2/latlong.dart' as ll;
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart' as mapbox;
 
 import '../core/geo/route_geometry.dart';
+import '../map/accident_map_layer.dart';
+import '../map/road_risk_map_layer.dart';
 import '../models/hazard_model.dart';
+import '../providers/accidents_provider.dart';
+import '../providers/app_setup_provider.dart';
 import '../providers/location_provider.dart';
 import '../providers/navigation_provider.dart';
+import '../providers/road_risk_provider.dart';
 import '../services/hazard_db_service.dart';
 import '../services/location_service.dart';
 import '../services/mapbox_service.dart';
 import '../services/osrm_service.dart';
+import '../widgets/accidents/accident_details_sheet.dart';
+import '../widgets/map_compass_button.dart';
+import '../widgets/rentals/rentals_sheet.dart';
+import '../widgets/road_risk/road_risk_details_sheet.dart';
 import '../widgets/route_summary_sheet.dart';
 import '../widgets/safety_alert_card.dart';
 import '../widgets/turn_by_turn_panel.dart';
@@ -32,6 +41,17 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
   static const Color _textPrimary = Color(0xFF202124);
   static const Color _textSecondary = Color(0xFF5F6368);
   static const ll.Distance _distance = ll.Distance();
+
+  // Must stay one instance: MapWidget re-applies its viewport whenever it
+  // receives a different object, which would snap the camera back here on
+  // every rebuild.
+  static final mapbox.CameraViewportState _initialViewport =
+      mapbox.CameraViewportState(
+    center: mapbox.Point(
+      coordinates: mapbox.Position(23.7275, 37.9838),
+    ),
+    zoom: 12.5,
+  );
 
   mapbox.MapboxMap? _map;
   mapbox.PolylineAnnotationManager? _routeLineManager;
@@ -63,8 +83,29 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
   bool _is3d = true;
   bool _simulationMode = true;
   bool _arrivalPending = false;
+  bool _hasCenteredOnUser = false;
+
+  /// During navigation: true keeps the map north-up instead of following
+  /// the driving direction. Toggled by tapping the compass.
+  bool _navigationNorthUp = false;
+
+  /// Live map bearing, for the compass needle without rebuilding the map.
+  final ValueNotifier<double> _mapBearing = ValueNotifier<double>(0);
+
+  late final AccidentMapLayer _accidentLayer = AccidentMapLayer(
+    onAccidentTap: (accident) {
+      if (mounted) showAccidentDetailsSheet(context, accident);
+    },
+  );
+
+  late final RoadRiskMapLayer _roadRiskLayer = RoadRiskMapLayer(
+    onSegmentTap: (assessment) {
+      if (mounted) showRoadRiskDetailsSheet(context, assessment);
+    },
+  );
 
   int _simulationIndex = 0;
+  int _lastDrawnRouteIndex = -1;
 
   double _simulationMetersAlongRoute = 0.0;
 
@@ -86,7 +127,6 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     HazardDbService.initializeDatabase();
-    LocationService.checkAndRequestPermissions();
   }
 
   @override
@@ -98,11 +138,16 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     _destinationController.dispose();
     _originFocus.dispose();
     _destinationFocus.dispose();
+    _mapBearing.dispose();
     super.dispose();
   }
 
   Future<void> _onMapCreated(mapbox.MapboxMap map) async {
     _map = map;
+
+    // Keep the Mapbox logo and attribution visible above the rentals sheet.
+    final ornamentMarginBottom =
+        RentalsSheet.peekHeight + MediaQuery.paddingOf(context).bottom + 8;
 
     await _map?.compass.updateSettings(
       mapbox.CompassSettings(enabled: false),
@@ -112,13 +157,13 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     );
     await _map?.attribution.updateSettings(
       mapbox.AttributionSettings(
-        marginBottom: 96,
+        marginBottom: ornamentMarginBottom,
         marginLeft: 8,
       ),
     );
     await _map?.logo.updateSettings(
       mapbox.LogoSettings(
-        marginBottom: 96,
+        marginBottom: ornamentMarginBottom,
         marginLeft: 8,
       ),
     );
@@ -134,6 +179,11 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
         await _map?.annotations.createCircleAnnotationManager();
     _vehicleManager =
         await _map?.annotations.createCircleAnnotationManager();
+
+    final position = _currentGpsPosition;
+    if (position != null) {
+      _centerOnFirstFix(position);
+    }
   }
 
   void _onSearchChanged(String query, {required bool origin}) {
@@ -358,10 +408,10 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
               position.latitude,
             ),
           ),
-          circleRadius: 10,
+          circleRadius: 7,
           circleColor: _mapsBlue.toARGB32(),
           circleStrokeColor: Colors.white.toARGB32(),
-          circleStrokeWidth: 3.5,
+          circleStrokeWidth: 2.5,
           circleOpacity: 1,
         ),
       );
@@ -386,6 +436,24 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     return (math.atan2(y, x) * 180 / math.pi + 360) % 360;
   }
 
+  /// Compass tap: turns the map back to north. While navigating it switches
+  /// between north-up and following the driving direction.
+  void _onCompassTap() {
+    if (ref.read(navigationProvider).isNavigating) {
+      setState(() => _navigationNorthUp = !_navigationNorthUp);
+
+      if (!_navigationNorthUp) {
+        _recenter();
+        return;
+      }
+    }
+
+    _map?.easeTo(
+      mapbox.CameraOptions(bearing: 0),
+      mapbox.MapAnimationOptions(duration: 300),
+    );
+  }
+
   Future<void> _followDriver(ll.LatLng position, double heading) async {
     if (!_cameraFollowing || _map == null) return;
 
@@ -396,7 +464,10 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
         ),
         zoom: 17.2,
         pitch: _is3d ? 58 : 0,
-        bearing: heading,
+        bearing: _navigationNorthUp &&
+                ref.read(navigationProvider).isNavigating
+            ? 0
+            : heading,
         padding: mapbox.MbxEdgeInsets(
           top: 150,
           left: 0,
@@ -520,10 +591,97 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     final position = nav.isNavigating
         ? nav.activeVehiclePosition
         : _currentGpsPosition;
-    if (position == null) return;
+
+    if (position == null) {
+      if (!ref.read(appSetupProvider).useDeviceLocation) {
+        _enableDeviceLocation();
+        return;
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Finding your location. Make sure location is turned on.',
+          ),
+        ),
+      );
+      return;
+    }
 
     setState(() => _cameraFollowing = true);
-    _followDriver(position, _lastHeading);
+    // Follow the driving direction while navigating (unless north-up is
+    // chosen); when browsing keep the map's current rotation.
+    _followDriver(
+      position,
+      nav.isNavigating ? _lastHeading : _mapBearing.value,
+    );
+  }
+
+  /// Asks for location access when the user skipped it during onboarding
+  /// and later taps the location button.
+  Future<void> _enableDeviceLocation() async {
+    final granted = await LocationService.checkAndRequestPermissions();
+
+    if (!mounted) return;
+
+    if (!granted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Location is off. Allow location access for Road Safety Insights '
+            'in your phone settings.',
+          ),
+        ),
+      );
+      return;
+    }
+
+    await ref.read(appSetupProvider.notifier).setUseDeviceLocation(true);
+  }
+
+  /// Shows road risk levels and recorded accidents once the map style has
+  /// loaded. Road lines go first so accident points draw on top of them.
+  Future<void> _addSafetyLayers() async {
+    final map = _map;
+    if (map == null) return;
+
+    try {
+      final assessments = await ref.read(roadRiskProvider.future);
+      if (!mounted) return;
+      await _roadRiskLayer.addTo(map, assessments);
+    } catch (error) {
+      debugPrint('RSI could not show road risk levels: $error');
+    }
+
+    try {
+      final catalog = await ref.read(accidentCatalogProvider.future);
+      if (!mounted) return;
+      await _accidentLayer.addTo(map, catalog);
+    } catch (error) {
+      debugPrint('RSI could not show accident points: $error');
+    }
+  }
+
+  /// Moves the map from its default view to the user once, on the first fix.
+  void _centerOnFirstFix(ll.LatLng position) {
+    final map = _map;
+
+    if (_hasCenteredOnUser || map == null) return;
+    if (ref.read(navigationProvider).activeRouteDetails != null) return;
+
+    _hasCenteredOnUser = true;
+
+    map.easeTo(
+      mapbox.CameraOptions(
+        center: mapbox.Point(
+          coordinates: mapbox.Position(position.longitude, position.latitude),
+        ),
+        zoom: 15,
+        bearing: 0,
+        pitch: 0,
+      ),
+      mapbox.MapAnimationOptions(duration: 600),
+    );
   }
 
   int _nearestRouteIndex(ll.LatLng position, List<ll.LatLng> route) {
@@ -761,9 +919,16 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
           height: 56,
           child: Row(
             children: [
-              const SizedBox(width: 17),
-              const Icon(Icons.search_rounded, color: _mapsBlue, size: 25),
-              const SizedBox(width: 13),
+              const SizedBox(width: 4),
+              IconButton(
+                tooltip: 'Menu',
+                // The State's context sits above this screen's Scaffold, so
+                // it reaches the HomeShell scaffold that owns the drawer.
+                onPressed: () => Scaffold.maybeOf(context)?.openDrawer(),
+                icon: const Icon(Icons.menu_rounded),
+                color: _textPrimary,
+              ),
+              const SizedBox(width: 2),
               Expanded(
                 child: Text(
                   hasRoute && title != null ? title : 'Where to?',
@@ -1040,6 +1205,10 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
     ref.listen<AsyncValue<ll.LatLng>>(
       locationStreamProvider,
       (previous, next) {
+        if (next.hasError) {
+          debugPrint('RSI location stream error: ${next.error}');
+        }
+
         next.whenData((position) {
           final previousPosition = _currentGpsPosition;
           if (previousPosition != null) {
@@ -1061,6 +1230,7 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
 
           if (!nav.isNavigating) {
             _updateVehicleMarker(position);
+            _centerOnFirstFix(position);
             return;
           }
 
@@ -1093,12 +1263,11 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
               key: const ValueKey('rsi-map'),
               onMapCreated: _onMapCreated,
               styleUri: mapbox.MapboxStyles.STANDARD,
-              viewport: mapbox.CameraViewportState(
-                center: mapbox.Point(
-                  coordinates: mapbox.Position(23.7275, 37.9838),
-                ),
-                zoom: 12.5,
-              ),
+              viewport: _initialViewport,
+              onStyleLoadedListener: (_) => _addSafetyLayers(),
+              onCameraChangeListener: (event) {
+                _mapBearing.value = event.cameraState.bearing;
+              },
             ),
           ),
 
@@ -1144,7 +1313,9 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
                 ? 114 + safeBottom
                 : nav.activeRouteDetails != null
                     ? 232 + safeBottom
-                    : 28 + safeBottom,
+                    : _plannerExpanded
+                        ? 28 + safeBottom
+                        : RentalsSheet.peekHeight + 16 + safeBottom,
             child: Column(
               children: [
                 if (nav.isNavigating) ...[
@@ -1158,6 +1329,16 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
                   ),
                   const SizedBox(height: 10),
                 ],
+                MapCompassButton(
+                  bearing: _mapBearing,
+                  tooltip: !nav.isNavigating
+                      ? 'Reset map to north'
+                      : _navigationNorthUp
+                          ? 'Follow driving direction'
+                          : 'Keep north up',
+                  onTap: _onCompassTap,
+                ),
+                const SizedBox(height: 10),
                 _mapButton(
                   icon: Icons.my_location_rounded,
                   onTap: _recenter,
@@ -1209,6 +1390,16 @@ class _LiveTrackingScreenState extends ConsumerState<LiveTrackingScreen> {
               right: 0,
               bottom: 0,
               child: _navigationBottomBar(nav),
+            ),
+
+          if (!nav.isNavigating &&
+              nav.activeRouteDetails == null &&
+              !_plannerExpanded)
+            Positioned.fill(
+              child: RentalsSheet(
+                // Keeps the search bar visible above the expanded sheet.
+                topClearance: safeTop + 78,
+              ),
             ),
         ],
       ),
