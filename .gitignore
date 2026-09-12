@@ -1,0 +1,25 @@
+# Flutter / Dart build output and caches
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/
+
+# Android build output
+android/.gradle/
+android/captures/
+android/app/.cxx/
+
+# Signing keys
+android/key.properties
+*.jks
+*.keystore
+
+# Python caches from tool/ scripts
+__pycache__/
+
+# OS and editor files
+.DS_Store
+.idea/
