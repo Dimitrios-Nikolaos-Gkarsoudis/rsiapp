@@ -1,0 +1,254 @@
+{
+  "companies": [
+    {
+      "id": "aegean-drive",
+      "name": "Aegean Drive",
+      "tagline": "Island-ready cars, delivered to the port",
+      "isPartner": true,
+      "brandColor": "#0B7A75",
+      "rating": 4.8,
+      "reviewCount": 312,
+      "phone": "+30 22850 00001",
+      "email": "bookings@aegeandrive.example",
+      "website": "https://aegeandrive.example"
+    },
+    {
+      "id": "cyclades-motion",
+      "name": "Cyclades Motion",
+      "tagline": "Automatic and hybrid cars across Naxos",
+      "isPartner": true,
+      "brandColor": "#C2410C",
+      "rating": 4.6,
+      "reviewCount": 187,
+      "phone": "+30 22850 00002",
+      "email": "hello@cycladesmotion.example",
+      "website": "https://cycladesmotion.example"
+    }
+  ],
+  "rentals": [
+    {
+      "id": "ad-fiat-panda",
+      "companyId": "aegean-drive",
+      "title": "Fiat Panda",
+      "category": "mini",
+      "image": "assets/images/rentals/fiat_panda.jpg",
+      "pricePerDay": 32,
+      "currency": "EUR",
+      "promotion": {
+        "label": "RSI partner deal",
+        "discountPercent": 15,
+        "validUntil": "2026-10-31"
+      },
+      "transmission": "manual",
+      "fuelType": "petrol",
+      "seats": 5,
+      "doors": 5,
+      "luggage": 2,
+      "airConditioning": true,
+      "minDriverAge": 21,
+      "depositAmount": 250,
+      "insurance": "basic",
+      "mileageLimitKmPerDay": null,
+      "pickup": {
+        "name": "Naxos Port (Chora)",
+        "latitude": 37.1068,
+        "longitude": 25.3739
+      },
+      "available": true
+    },
+    {
+      "id": "ad-suzuki-jimny",
+      "companyId": "aegean-drive",
+      "title": "Suzuki Jimny",
+      "category": "offroad",
+      "image": "assets/images/rentals/suzuki_jimny.jpg",
+      "pricePerDay": 68,
+      "currency": "EUR",
+      "promotion": {
+        "label": "Explore the island",
+        "discountPercent": 10,
+        "validUntil": "2026-10-15"
+      },
+      "transmission": "manual",
+      "fuelType": "petrol",
+      "seats": 4,
+      "doors": 3,
+      "luggage": 1,
+      "airConditioning": true,
+      "minDriverAge": 23,
+      "depositAmount": 500,
+      "insurance": "full",
+      "mileageLimitKmPerDay": null,
+      "pickup": {
+        "name": "Naxos Airport (JNX)",
+        "latitude": 37.0811,
+        "longitude": 25.3681
+      },
+      "available": true
+    },
+    {
+      "id": "ad-fiat-500c",
+      "companyId": "aegean-drive",
+      "title": "Fiat 500C Cabrio",
+      "category": "convertible",
+      "image": "assets/images/rentals/fiat_500c.jpg",
+      "pricePerDay": 55,
+      "currency": "EUR",
+      "promotion": null,
+      "transmission": "manual",
+      "fuelType": "petrol",
+      "seats": 4,
+      "doors": 3,
+      "luggage": 1,
+      "airConditioning": true,
+      "minDriverAge": 21,
+      "depositAmount": 300,
+      "insurance": "basic",
+      "mileageLimitKmPerDay": 200,
+      "pickup": {
+        "name": "Agios Prokopios",
+        "latitude": 37.0737,
+        "longitude": 25.3542
+      },
+      "available": true
+    },
+    {
+      "id": "ad-toyota-yaris-hybrid",
+      "companyId": "aegean-drive",
+      "title": "Toyota Yaris Hybrid",
+      "category": "economy",
+      "image": "assets/images/rentals/toyota_yaris_hybrid.jpg",
+      "pricePerDay": 49,
+      "currency": "EUR",
+      "promotion": null,
+      "transmission": "automatic",
+      "fuelType": "hybrid",
+      "seats": 5,
+      "doors": 5,
+      "luggage": 2,
+      "airConditioning": true,
+      "minDriverAge": 21,
+      "depositAmount": 300,
+      "insurance": "full",
+      "mileageLimitKmPerDay": null,
+      "pickup": {
+        "name": "Naxos Port (Chora)",
+        "latitude": 37.1068,
+        "longitude": 25.3739
+      },
+      "available": false
+    },
+    {
+      "id": "cm-toyota-aygo-x",
+      "companyId": "cyclades-motion",
+      "title": "Toyota Aygo X",
+      "category": "mini",
+      "image": "assets/images/rentals/toyota_aygo_x.jpg",
+      "pricePerDay": 38,
+      "currency": "EUR",
+      "promotion": {
+        "label": "Early booking",
+        "discountPercent": 20,
+        "validUntil": "2026-09-30"
+      },
+      "transmission": "automatic",
+      "fuelType": "petrol",
+      "seats": 4,
+      "doors": 5,
+      "luggage": 1,
+      "airConditioning": true,
+      "minDriverAge": 21,
+      "depositAmount": 200,
+      "insurance": "basic",
+      "mileageLimitKmPerDay": null,
+      "pickup": {
+        "name": "Naxos Airport (JNX)",
+        "latitude": 37.0811,
+        "longitude": 25.3681
+      },
+      "available": true
+    },
+    {
+      "id": "cm-vw-polo",
+      "companyId": "cyclades-motion",
+      "title": "Volkswagen Polo",
+      "category": "economy",
+      "image": "assets/images/rentals/vw_polo.jpg",
+      "pricePerDay": 42,
+      "currency": "EUR",
+      "promotion": null,
+      "transmission": "manual",
+      "fuelType": "petrol",
+      "seats": 5,
+      "doors": 5,
+      "luggage": 2,
+      "airConditioning": true,
+      "minDriverAge": 21,
+      "depositAmount": 300,
+      "insurance": "basic",
+      "mileageLimitKmPerDay": 250,
+      "pickup": {
+        "name": "Chora Centre",
+        "latitude": 37.1036,
+        "longitude": 25.3766
+      },
+      "available": true
+    },
+    {
+      "id": "cm-peugeot-208",
+      "companyId": "cyclades-motion",
+      "title": "Peugeot 208",
+      "category": "economy",
+      "image": "assets/images/rentals/peugeot_208.jpg",
+      "pricePerDay": 46,
+      "currency": "EUR",
+      "promotion": null,
+      "transmission": "automatic",
+      "fuelType": "petrol",
+      "seats": 5,
+      "doors": 5,
+      "luggage": 2,
+      "airConditioning": true,
+      "minDriverAge": 21,
+      "depositAmount": 300,
+      "insurance": "full",
+      "mileageLimitKmPerDay": null,
+      "pickup": {
+        "name": "Naxos Port (Chora)",
+        "latitude": 37.1068,
+        "longitude": 25.3739
+      },
+      "available": true
+    },
+    {
+      "id": "cm-nissan-qashqai",
+      "companyId": "cyclades-motion",
+      "title": "Nissan Qashqai",
+      "category": "suv",
+      "image": "assets/images/rentals/nissan_qashqai.jpg",
+      "pricePerDay": 79,
+      "currency": "EUR",
+      "promotion": {
+        "label": "Family week",
+        "discountPercent": 10,
+        "validUntil": "2026-11-30"
+      },
+      "transmission": "automatic",
+      "fuelType": "hybrid",
+      "seats": 5,
+      "doors": 5,
+      "luggage": 3,
+      "airConditioning": true,
+      "minDriverAge": 25,
+      "depositAmount": 600,
+      "insurance": "full",
+      "mileageLimitKmPerDay": null,
+      "pickup": {
+        "name": "Naxos Airport (JNX)",
+        "latitude": 37.0811,
+        "longitude": 25.3681
+      },
+      "available": true
+    }
+  ]
+}
