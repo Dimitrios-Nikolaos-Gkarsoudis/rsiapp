@@ -11,7 +11,10 @@ Future<void> initializeBackgroundService() async {
       onStart: onBackgroundStart,
       autoStart: false,
       isForegroundMode: true,
-      notificationChannelId: 'navigation_channel',
+      // No custom notificationChannelId: the plugin only creates its default
+      // channel itself. A custom id needs a channel created by the app first,
+      // otherwise Android kills the app with "Bad notification for
+      // startForeground" as soon as the service starts.
       initialNotificationTitle: 'Πλοήγηση RSI',
       initialNotificationContent: 'Η πλοήγηση είναι ενεργή',
       // foregroundServiceType removed to prevent the undefined error
